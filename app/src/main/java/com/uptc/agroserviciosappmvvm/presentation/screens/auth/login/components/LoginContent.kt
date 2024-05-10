@@ -148,7 +148,7 @@ fun LoginContent(navController: NavHostController, paddingValues: PaddingValues,
                             .fillMaxWidth()
                             .padding(bottom = 10.dp),
                         text = "Entrar",
-                        onClick = { vm.validateForm() }
+                        onClick = { vm.login() }
                     )
                     DefaultButton(
                         modifier = Modifier

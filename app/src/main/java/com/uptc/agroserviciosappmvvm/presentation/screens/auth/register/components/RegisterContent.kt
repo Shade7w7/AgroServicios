@@ -90,7 +90,7 @@ fun RegisterContent(paddingValues: PaddingValues, vm: RegisterViewModel = hiltVi
             ) {
                 Column (
                     modifier = Modifier
-                        .padding(top = 30.dp)
+                        .padding(top = 18.dp)
                         .padding(horizontal = 30.dp)
                         .fillMaxWidth()
                         .verticalScroll(rememberScrollState()),
@@ -104,11 +104,18 @@ fun RegisterContent(paddingValues: PaddingValues, vm: RegisterViewModel = hiltVi
                     )
                     DefaultTextField(
                         modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 5.dp),
+                            .fillMaxWidth(),
                         value = state.name,
                         onValueChange = { text -> vm.onNameInput(text) },
                         label = "Nombre",
+                        keyboardType = KeyboardType.Text
+                    )
+                    DefaultTextField(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        value = state.lastname,
+                        onValueChange = { text -> vm.onLastNameInput(text) },
+                        label = "Apellido",
                         keyboardType = KeyboardType.Text
                     )
                     DefaultTextField(
@@ -122,7 +129,7 @@ fun RegisterContent(paddingValues: PaddingValues, vm: RegisterViewModel = hiltVi
                     DefaultTextField(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(bottom = 43.dp),
+                            .padding(bottom = 30.dp),
                         value = state.password,
                         onValueChange = { text -> vm.onPasswordInput(text) },
                         label = "Contraseña",

@@ -36,7 +36,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "11"
+         jvmTarget = "11"
     }
     buildFeatures {
         compose = true
@@ -66,9 +66,14 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.7")
 
     // DAGGER HILT
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0-alpha01")
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+    // GSON
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

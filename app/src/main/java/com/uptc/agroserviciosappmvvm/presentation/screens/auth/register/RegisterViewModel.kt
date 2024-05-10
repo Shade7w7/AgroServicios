@@ -22,6 +22,10 @@ class RegisterViewModel @Inject constructor(): ViewModel() {
         state = state.copy(name = input)
     }
 
+    fun onLastNameInput(input: String) {
+        state = state.copy(lastname = input)
+    }
+
     fun onEmailInput(input: String) {
         state = state.copy(email = input)
     }
@@ -33,6 +37,9 @@ class RegisterViewModel @Inject constructor(): ViewModel() {
     fun validateForm() = viewModelScope.launch{
         if (state.name == ""){
             errorMessage = "Ingrese el nombre"
+        }
+        else if (state.lastname == ""){
+            errorMessage = "Ingrese el apellido"
         }
         else if (state.email == ""){
             errorMessage = "Ingrese el correo"
